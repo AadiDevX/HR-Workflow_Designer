@@ -77,6 +77,12 @@ function App() {
         />
       </div>
 
+      <footer className="bg-white border-t border-gray-200 px-6 py-4 flex items-center justify-center">
+        <p className="text-sm text-gray-600">
+          Made by Aaditya
+        </p>
+      </footer>
+
       <TestingPanel nodes={nodes} edges={edges} />
     </div>
   );
