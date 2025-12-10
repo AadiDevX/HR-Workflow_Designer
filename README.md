@@ -31,32 +31,46 @@ A visual workflow designer for HR processes built with React, TypeScript, and Re
 ### Project Structure
 
 ```
-src/
-├── components/
-│   ├── Canvas/
-│   │   ├── WorkflowCanvas.tsx      # Main React Flow canvas
-│   │   └── NodeSidebar.tsx         # Draggable node palette
-│   ├── Forms/
-│   │   ├── NodeConfigPanel.tsx     # Main configuration panel
-│   │   ├── StartNodeForm.tsx       # Start node form
-│   │   ├── TaskNodeForm.tsx        # Task node form
-│   │   ├── ApprovalNodeForm.tsx    # Approval node form
-│   │   ├── AutomatedStepNodeForm.tsx  # Automated step form
-│   │   ├── EndNodeForm.tsx         # End node form
-│   │   └── KeyValueEditor.tsx      # Reusable key-value editor
-│   ├── Nodes/
-│   │   └── CustomNode.tsx          # Custom node component
-│   └── Testing/
-│       └── TestingPanel.tsx        # Workflow testing UI
-├── hooks/
-│   └── useWorkflow.ts              # Workflow state management hook
-├── types/
-│   └── workflow.types.ts           # TypeScript type definitions
-├── api/
-│   └── mockApi.ts                  # Mock API layer
-├── utils/
-│   └── validation.ts               # Workflow validation logic
-└── App.tsx                         # Main application component
+project-root/
+├── public/                         # Static assets
+│   ├── manifest.json              # Web app manifest
+│   └── robots.txt                 # SEO robots file
+├── src/
+│   ├── components/
+│   │   ├── Canvas/
+│   │   │   ├── WorkflowCanvas.tsx      # Main React Flow canvas
+│   │   │   └── NodeSidebar.tsx         # Draggable node palette
+│   │   ├── Forms/
+│   │   │   ├── NodeConfigPanel.tsx     # Main configuration panel
+│   │   │   ├── StartNodeForm.tsx       # Start node form
+│   │   │   ├── TaskNodeForm.tsx        # Task node form
+│   │   │   ├── ApprovalNodeForm.tsx    # Approval node form
+│   │   │   ├── AutomatedStepNodeForm.tsx  # Automated step form
+│   │   │   ├── EndNodeForm.tsx         # End node form
+│   │   │   └── KeyValueEditor.tsx      # Reusable key-value editor
+│   │   ├── Nodes/
+│   │   │   └── CustomNode.tsx          # Custom node component
+│   │   └── Testing/
+│   │       └── TestingPanel.tsx        # Workflow testing UI
+│   ├── hooks/
+│   │   └── useWorkflow.ts              # Workflow state management hook
+│   ├── types/
+│   │   └── workflow.types.ts           # TypeScript type definitions
+│   ├── api/
+│   │   └── mockApi.ts                  # Mock API layer
+│   ├── utils/
+│   │   └── validation.ts               # Workflow validation logic
+│   ├── App.tsx                         # Main application component
+│   ├── main.tsx                        # React DOM entry point
+│   └── index.css                       # Global styles
+├── dist/                           # Built production files
+├── package.json                    # Project dependencies
+├── vite.config.ts                  # Vite configuration
+├── tsconfig.json                   # TypeScript configuration
+├── tailwind.config.js              # Tailwind CSS configuration
+├── postcss.config.js               # PostCSS configuration
+├── index.html                      # HTML entry point
+└── README.md                       # This file
 ```
 
 ### Design Decisions
@@ -123,6 +137,19 @@ Benefits:
 - Clear visual hierarchy
 - Responsive layout with fixed panels
 - Accessible color contrast ratios
+
+#### 7. Static Assets & Public Folder
+
+**Organization**: Static assets like manifests, robots files, and metadata are organized in the `public/` folder:
+
+- **manifest.json**: Web app manifest for PWA support with app metadata
+- **robots.txt**: SEO configuration for search engine crawlers
+- These files are automatically copied to the `dist/` folder during build
+
+**Benefits**:
+- Keeps static assets separate from source code
+- Vite automatically handles asset optimization
+- Easy to add favicons, fonts, or other public resources
 
 ## Technology Stack
 
